@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">How Much Will You Make?</string>
+
+    <string name="unit_prompt">Please choose a unit</string>
+
+    <string-array name="unit_arrays">
+        <item>Please choose a Unit...</item>
+        <item>Hour(s)/Day (5 days per week) </item>
+        <item>Hour(s)/Day (7 days per week)</item>
+        <item>Hour(s)/Week</item>
+        <item>Hour(s)/Month</item>
+        <item>Hour(s)/Year</item>
+        <item>Day(s)/Week</item>
+        <item>Day(s)/Month</item>
+        <item>Day(s)/Year</item>
+        <item>Week(s)/Month</item>
+        <item>Week(s)/Year</item>
+        <item>Month(s)/Year</item>
+    </string-array>
+
+    <string name="category_placeholder"><i>e.g. My Job, Rent, Food, Gas, etc.</i></string>
+
+    <string name="amount_per_unit_placeholder"><i>e.g. 20.50</i></string>
+
+    <string name="num_sign_placeholder"><i>#</i></string>
+</resources>

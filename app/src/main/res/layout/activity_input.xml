@@ -1,0 +1,247 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_input"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.howmuchwillyoumake.howmuchwillyoumake.Input">
+
+
+    <TextView
+        android:id="@+id/intro_example_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Here are some examples of what each activity should look like:\n\n( 1 ) Rent: Subtract $460.00 12 months/year for 3 years.\n\n( 2 ) Work: Add $20.50 8 hours/day (5 days a week) for 5 years."
+        android:textSize="13dp"
+        android:layout_marginBottom="20dp"
+        android:textStyle="italic"/>
+
+    <!--CATEGORY & CATEGORY INPUT-->
+    <TextView
+        android:id="@+id/title_text_display"
+        android:text="Category:"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20dp"
+        android:textStyle="bold"
+        android:layout_alignBaseline="@+id/title_input"
+        android:layout_alignBottom="@+id/title_input"
+        android:layout_alignParentStart="true"
+        android:layout_weight="0.5"/>
+
+    <EditText
+        android:id="@+id/title_input"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:hint="@string/category_placeholder"
+        android:textSize="16dp"
+        android:layout_below="@+id/intro_example_input"
+        android:layout_alignEnd="@+id/operation_layout" />
+
+
+    <!--ADD & SUBTRACT BUTTONS-->
+    <LinearLayout
+        android:id="@+id/operation_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="2dp"
+        android:layout_marginLeft="2dp"
+        android:orientation="horizontal"
+        android:layout_below="@+id/title_text_display"
+        android:layout_centerHorizontal="true">
+
+        <Button
+            android:id="@+id/add_button"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="Add"/>
+        <!--android:background="@drawable/button_background"-->
+
+
+        <TextView
+            android:id="@+id/or_text"
+            android:text=" OR "
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:textSize="20dp"
+            android:layout_marginTop="23dp"
+            android:layout_marginBottom="20dp"
+            android:paddingLeft="12dp"
+            android:paddingRight="12dp" />
+
+        <Button
+            android:id="@+id/sub_button"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginTop="20dp"
+            android:layout_marginBottom="20dp"
+            android:text="Subtract" />
+            <!--android:background="@drawable/button_background" />-->
+
+    </LinearLayout>
+
+
+    <!--AMOUNT PER UNIT-->
+    <TextView
+        android:id="@+id/dollar_sign"
+        android:text="$"
+        android:textSize="40dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/amount_per_unit"
+        android:layout_alignStart="@+id/title_text_display" />
+
+    <EditText
+        android:id="@+id/amount_per_unit"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/dollar_sign"
+        android:inputType="numberDecimal"
+        android:ems="10"
+        android:layout_below="@+id/operation_layout"
+        android:layout_centerHorizontal="true"
+        android:gravity="center"
+        android:hint="@string/amount_per_unit_placeholder"/>
+
+
+
+    <!--NUMBER OF UNITS (e.g. 3 hours/week)-->
+    <LinearLayout
+        android:id="@+id/num_of_units_layout"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="10dp"
+        android:layout_below="@+id/amount_per_unit"
+        android:orientation="horizontal" >
+
+        <EditText
+            android:id="@+id/num_of_units"
+            android:hint="@string/num_sign_placeholder"
+            android:gravity="center"
+            android:layout_width="50dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:layout_below="@+id/amount_per_unit"
+            android:layout_centerHorizontal="true" />
+
+        <Spinner
+            android:id="@+id/units_dropdown"
+            android:layout_width="match_parent"
+            android:layout_height="42dp"
+            android:prompt="@string/unit_prompt"
+            android:entries="@array/unit_arrays"
+            android:gravity="center" />
+    </LinearLayout>
+
+
+
+    <!--NUMBER OF YEARS-->
+    <LinearLayout
+        android:id="@+id/num_years_layout"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="2dp"
+        android:layout_marginLeft="2dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:weightSum="1"
+        android:layout_below="@+id/num_of_units_layout"
+        android:layout_alignStart="@+id/num_of_units_layout">
+
+        <TextView
+            android:id="@+id/for_text"
+            android:text="for"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:textSize="15dp" />
+
+        <EditText
+            android:id="@+id/num_years"
+            android:hint="@string/num_sign_placeholder"
+            android:layout_width="51dp"
+            android:layout_height="wrap_content"
+            android:inputType="number"
+            android:ems="10"
+            android:gravity="center"
+            android:layout_weight="0.09" />
+
+        <TextView
+            android:id="@+id/years_text"
+            android:text=" years."
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentStart="true"
+            android:textSize="15dp" />
+    </LinearLayout>
+
+
+    <!--CLEAR, START OVER, & CONTINUE BUTTONS-->
+
+        <!--<Button-->
+            <!--android:id="@+id/back_to_main_menu_button_input"-->
+            <!--android:text="Back to Main Menu"-->
+            <!--android:layout_width="wrap_content"-->
+            <!--android:layout_height="wrap_content"-->
+            <!--android:layout_weight="0.5"/>-->
+
+
+
+    <!--BOTTOM BUTTONS-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:layout_alignParentBottom="true"
+        android:layout_toEndOf="@+id/title_text_display"
+        android:layout_alignStart="@+id/num_years_layout">
+
+        <Button
+            android:id="@+id/clear_all_button_input"
+            android:text="Clear All"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_weight="0.5"/>
+
+        <Button
+            android:id="@+id/submit_button_input"
+            android:text="Submit"
+            android:layout_width="0dip"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignStart="@+id/clearAllButton"
+            android:layout_weight="0.5"/>
+
+    </LinearLayout>
+
+
+    <!--<Button-->
+        <!--android:id="@+id/startOverButton"-->
+        <!--android:text="Start Over"-->
+        <!--android:layout_width="match_parent"-->
+        <!--android:layout_height="wrap_content"-->
+        <!--android:layout_above="@+id/continueButton"-->
+        <!--android:layout_alignStart="@+id/continueButton"-->
+        <!--android:gravity="center" />-->
+
+
+
+</RelativeLayout>

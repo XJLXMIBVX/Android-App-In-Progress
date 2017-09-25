@@ -1,0 +1,100 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_output"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context="com.howmuchwillyoumake.howmuchwillyoumake.Output">
+
+    <!-- BOTTOM BUTTONS-->
+    <LinearLayout
+        android:id="@+id/buttons_layout_2"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginRight="2dp"
+        android:layout_marginLeft="2dp"
+        android:layout_marginTop="-5dp"
+        android:orientation="horizontal"
+        android:weightSum="3"
+        android:layout_alignParentBottom="true"
+        android:layout_alignStart="@+id/output_layout">
+
+        <Button
+            android:id="@+id/start_over_button_output"
+            android:text="Start Over"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1"
+            android:layout_marginLeft="-2dp"/>
+
+        <Button
+            android:id="@+id/add_button_output"
+            android:text="Add Entry"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1"/>
+
+        <Button
+            android:id="@+id/change_total_years_button_output"
+            android:text="Change \n # of Years"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:layout_weight="1"/>
+    </LinearLayout>
+
+
+    <!--TOP BUTTONS-->
+
+    <Button
+        android:id="@+id/view_all_entries_button_output"
+        android:text="VIEW ALL ENTRIES"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_above="@+id/buttons_layout_2"
+        android:layout_alignEnd="@+id/buttons_layout_2"
+        android:layout_marginBottom="2dp"/>
+
+    <TextView
+        android:id="@+id/you_will_make_textview"
+        android:text="YOU WILL MAKE"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:layout_marginTop="94dp"
+        android:layout_alignParentTop="true"
+        android:layout_alignStart="@+id/buttons_layout_2" />
+
+    <TextView
+        android:id="@+id/total"
+        android:text="$9,999.00"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="45dp"
+        android:gravity="right"
+        android:layout_marginTop="15dp"
+        android:layout_below="@+id/you_will_make_textview"
+        android:layout_alignEnd="@+id/num_of_years_final_textview"
+        android:maxLines="1"/>
+        <!--android:autoSizeTextType="uniform"-->
+
+    <TextView
+        android:id="@+id/num_of_years_final_textview"
+        android:text="IN YEAR(S)!"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="25dp"
+        android:gravity="center"
+        android:layout_marginTop="12dp"
+        android:layout_below="@+id/total"
+        android:layout_alignEnd="@+id/view_all_entries_button_output" />
+
+
+</RelativeLayout>
+
